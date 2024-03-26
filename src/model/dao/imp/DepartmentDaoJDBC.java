@@ -74,10 +74,10 @@ public class DepartmentDaoJDBC implements DepartmentDao{
         PreparedStatement ps = null;
         try{
             ps = conn.prepareStatement(
-                "DELETE FROM sellers WHERE Id = ? " 
+                "DELETE FROM department WHERE Id = ? " 
             );
             ps.setInt(1, id);
-            ps.executeQuery();
+            ps.executeUpdate();
         }catch(SQLException e){
             throw new DbException(e.getMessage());
         }finally{
